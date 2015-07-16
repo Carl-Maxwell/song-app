@@ -1,15 +1,22 @@
 class SessionsController < ApplicationController
+  before_action :require_guest, only: [:new, :create]
+  before_action :require_user, only: [:destroy]
+
   def new
   end
 
   def create
-    user = User.find_by_credentials(params[:email], params[:password])
+    user = User.find_by_credentials(
+      params[:user][:email],
+      params[:user][:password]
+    )
 
     if user
-      user.reset_session_token!
-      session[:session_token] = user.session_token
+      login(user)
+
+      redirect_to user_url(user)
     else
-      redirect new_session_url
+      redirect_to new_session_url
     end
   end
 

@@ -7,4 +7,17 @@
     value="<%= form_authenticity_token %>"
   >
 
+  <label>
+    Email
+    <input type="text" name="user[email]">
+  </label>
+
+  <label>
+    Password
+    <input type="password" name="user[password]">
+  </label>
+
+  <input type="submit" value="register">
 </form>
+
+<%= my_form("register", User, "POST", {}) %>

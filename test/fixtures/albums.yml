@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  band_id: 1
+  live_or_studio: MyString
+  name: MyString
+
+two:
+  band_id: 1
+  live_or_studio: MyString
+  name: MyString
