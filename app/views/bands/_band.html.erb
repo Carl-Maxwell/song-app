@@ -1,0 +1,10 @@
+<%= link_to band.name, band %><%
+
+%><h3>Albums</h3><%
+%><ul><%
+  band.albums.each do |album|
+    %><li><%
+      %><%= render album %><%
+    %></li><%
+  end
+%></ul>

@@ -1,2 +1,7 @@
-<h1>Albums#new</h1>
-<p>Find me in app/views/albums/new.html.erb</p>
+<%= my_form(
+            @album,
+            :create,
+            [:name, :text],
+            [:live_or_studio, :radio],
+            [:band_id, :dropdown]
+            ) %>

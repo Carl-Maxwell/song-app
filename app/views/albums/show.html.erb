@@ -1,2 +1,12 @@
-<h1>Albums#show</h1>
-<p>Find me in app/views/albums/show.html.erb</p>
+<%
+  content_for :navbar do
+    %><li><%= link_to "edit", edit_album_url(@album) %></i><%
+    %><li><%= link_to "delete", album_url(@album), method: :delete %></i><%
+    %><li><%= link_to "band", band_url(@album.band) %></i><%
+    %><li><%= link_to "add album", new_band_albums_url(@album) %></i><%
+  end
+%>
+
+<h1>Albums show</h1>
+
+<%= render @album %>

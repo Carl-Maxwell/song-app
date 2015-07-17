@@ -1,0 +1,14 @@
+<h1><%= name %></h1>
+
+<form action="<%= action %>" method="POST">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>"
+  >
+
+  <%= control(@user, :email, :text) %>
+  <%= control(@user, :password, :password) %>
+
+  <input type="submit" value="<%= name %>">
+</form>

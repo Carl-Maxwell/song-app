@@ -1,2 +1,8 @@
-<h1>Tracks#edit</h1>
-<p>Find me in app/views/tracks/edit.html.erb</p>
+<%= my_form(
+            @track,
+            :update,
+            [:name, :text],
+            [:bonus_or_regular, :radio],
+            [:lyrics, :textarea],
+            [:album_id, :dropdown]
+            ) %>

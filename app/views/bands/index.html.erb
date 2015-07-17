@@ -1,23 +1,15 @@
-<h1>Bands#index</h1>
+<h1>Bands</h1>
+
+<%
+  content_for :navbar do
+    %><li><%= link_to "Add band", new_band_url %></i><%
+  end
+%>
 
 <ul>
 <% @bands.each do |band|
   %><li><%
-    %><%= band.name %><%
-
-    %><ul><%
-      band.albums.each do |album|
-        %><li><%
-          %><%= album.name %><%
-
-          %><ul><%
-            album.tracks.each do |track|
-              %><li><%= track.name %></li><%
-            end
-          %></ul><%
-        %></li><%
-      end
-    %></ul><%
+    %><%= render band %><%
   %></li><%
 end %>
 </ul>

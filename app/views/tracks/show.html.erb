@@ -1,2 +1,21 @@
-<h1>Tracks#show</h1>
-<p>Find me in app/views/tracks/show.html.erb</p>
+<%
+  content_for :navbar do
+    %><li><%= link_to "edit", edit_track_url(@track) %></i><%
+    %><li><%= link_to "delete", track_url(@track), method: :delete %></i><%
+    %><li><%= link_to "album", album_url(@track.album) %></i><%
+  end
+%>
+
+<h1>Tracks show</h1>
+
+<%= render @track %>
+
+<p><%= @track.bonus_or_regular %></p>
+
+<pre><%= @track.lyrics %></pre>
+
+<% @track.notes.each do |note| %>
+  <%= render note %>
+<% end %>
+
+<%= render partial: "notes/form" %>

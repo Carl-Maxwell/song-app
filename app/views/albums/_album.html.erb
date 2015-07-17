@@ -1,0 +1,8 @@
+<%= link_to album.name, album %><%
+
+%><h3>Tracks</h3><%
+%><ul><%
+  album.tracks.each do |track|
+    %><%= render track %><%
+  end
+%></ul>

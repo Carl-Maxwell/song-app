@@ -8,19 +8,26 @@
 </head>
 <body>
 
-<%
-  if logged_in?
-    %>Welcome! <%= current_user.email %><%
-    %><br /><%
-    %><%= link_to "logout", session_url, method: :DELETE %><%
-  else
-    %><%= link_to "login", new_session_url %><%
-    %> | <%
-    %><%= link_to "register", new_user_url %><%
-  end
-%>
+<div style="width:800px; margin: 0 auto 20px auto; background: whitesmoke; padding: 10px">
+  <%
+    if logged_in?
+      %>Welcome <%= current_user.email %>!<%
+      %><br /><%
+      %><%= link_to "logout", session_url, method: :DELETE %><%
+    else
+      %><%= link_to "login", new_session_url %><%
+      %> | <%
+      %><%= link_to "register", new_user_url %><%
+    end
+  %>
+  <ul>
+      <%= yield :navbar %>
+  </ul>
+</div>
 
+<div style="width:800px; margin: 0 auto; background: whitesmoke; padding: 10px">
 <%= yield %>
+</div>
 
 </body>
 </html>

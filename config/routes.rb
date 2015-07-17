@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'notes/create'
+
   resources :bands do
     resource :albums, only: [:new]
   end
@@ -9,7 +11,11 @@ Rails.application.routes.draw do
 
   resources :tracks, except: [:index, :new]
 
+  resources :notes, only: [:create, :destroy]
+
   resource :session, only: [:new, :create, :destroy]
 
   resources :users, only: [:show, :new, :create]
+
+  root "bands#index"
 end

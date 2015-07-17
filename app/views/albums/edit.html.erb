@@ -1,2 +1,7 @@
-<h1>Albums#edit</h1>
-<p>Find me in app/views/albums/edit.html.erb</p>
+<%= my_form(
+            @album,
+            :update,
+            [:name, :text],
+            [:live_or_studio, :radio],
+            [:band_id, :dropdown]
+            ) %>

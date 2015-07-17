@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
+  has_many :notes
+
   def reset_session_token!
     self.session_token = self.class.generate_session_token
     self.save!

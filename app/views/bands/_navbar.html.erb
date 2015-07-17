@@ -1,0 +1,7 @@
+<%
+  content_for :navbar do
+    %><li><%= link_to "edit", edit_band_url(@band) %></i><%
+    %><li><%= link_to "delete", band_url(@band), method: :delete %></i><%
+    %><li><%= link_to "index", bands_url %></i><%
+  end
+%>

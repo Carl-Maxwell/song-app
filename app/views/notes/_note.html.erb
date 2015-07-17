@@ -1,0 +1,6 @@
+<div style="background: lightgrey; margin-left: 10px;">
+  <span>by <%= note.user.email %></span>
+  <br />
+  <%= link_to "delete note", note, method: :delete %>
+  <p><%= note.body %></p>
+</div>
